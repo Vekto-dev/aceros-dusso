@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aceros Dusso | Soluciones gastronómicas, extracción, ventilación, zinguería y plegados</title>
+  <meta name="description" content="Aceros Dusso desarrolla soluciones gastronómicas, sistemas de extracción y ventilación, zinguería y plegados para restaurantes, bares, pizzerías, cocinas industriales y proyectos comerciales." />
+  <meta name="theme-color" content="#0d1114" />
+  <style>
+    :root {
+      --bg: #0c1013;
+      --bg-2: #11171b;
+      --panel: #141c21;
+      --panel-2: #1a2329;
+      --line: rgba(255,255,255,.1);
+      --text: #f3f5f6;
+      --muted: #aab4bb;
+      --accent: #dfe6eb;
+      --accent-2: #8ea0ad;
+      --shadow: 0 18px 60px rgba(0,0,0,.34);
+      --radius: 24px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(143,163,176,.12), transparent 28%),
+        linear-gradient(180deg, #090d10 0%, #0d1114 42%, #10161a 100%);
+      line-height: 1.5;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(calc(100% - 32px), var(--max)); margin: 0 auto; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      backdrop-filter: blur(12px);
+      background: rgba(10, 14, 17, .78);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: linear-gradient(145deg, #d3dde4 0%, #8094a1 100%);
+      position: relative;
+      overflow: hidden;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.4), 0 10px 24px rgba(0,0,0,.24);
+    }
+
+    .brand-mark::before,
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      left: 8px;
+      right: 8px;
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(9, 12, 15, .88);
+    }
+
+    .brand-mark::before { top: 12px; }
+    .brand-mark::after { top: 24px; right: 14px; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    .button,
+    .button-secondary,
+    .chip-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 20px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: transform .22s ease, background .22s ease, border-color .22s ease;
+    }
+
+    .button {
+      background: linear-gradient(135deg, #eef3f6, #97aab6);
+      color: #0c1217;
+      box-shadow: 0 12px 34px rgba(142,162,176,.28);
+    }
+
+    .button:hover,
+    .button-secondary:hover,
+    .chip-link:hover { transform: translateY(-2px); }
+
+    .button-secondary,
+    .chip-link {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 54px 0 22px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.02fr .98fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .hero-copy,
+    .hero-visual {
+      min-height: 640px;
+      border-radius: 30px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-copy {
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)),
+        linear-gradient(145deg, #11171c 0%, #0d1216 100%);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      align-self: flex-start;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.04);
+      color: #dae2e8;
+      font-size: .82rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    h1 {
+      margin: 18px 0 18px;
+      font-size: clamp(2.8rem, 5vw, 5rem);
+      line-height: .96;
+      letter-spacing: -.045em;
+      max-width: 11ch;
+    }
+
+    .lead {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 58ch;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .point {
+      padding: 18px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.025);
+    }
+
+    .point strong {
+      display: block;
+      font-size: .95rem;
+      margin-bottom: 8px;
+    }
+
+    .point span {
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .hero-visual { position: relative; background: #0b0f12; }
+    .hero-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(1.04) contrast(1.03);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,.14) 0%, rgba(0,0,0,.68) 100%);
+    }
+
+    .hero-card {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 22px;
+      padding: 22px;
+      border-radius: 22px;
+      background: rgba(8, 12, 14, .74);
+      border: 1px solid rgba(255,255,255,.13);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1.06rem;
+    }
+
+    .hero-card span { color: #d6dde1; }
+
+    .section { padding: 36px 0 0; }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 22px;
+    }
+
+    .kicker {
+      color: #cdd7de;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: .82rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(1.9rem, 4vw, 3.15rem);
+      line-height: 1.04;
+      letter-spacing: -.035em;
+    }
+
+    .section-head p,
+    .service p,
+    .service li,
+    .feature p,
+    .project p,
+    .process p,
+    .cta p,
+    .footer-note,
+    footer p,
+    .stat span,
+    .caption span {
+      color: var(--muted);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .stat {
+      padding: 22px;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.025);
+      box-shadow: var(--shadow);
+    }
+
+    .stat strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .service {
+      padding: 24px;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02)),
+        linear-gradient(180deg, #131a1f 0%, #10161a 100%);
+      box-shadow: var(--shadow);
+    }
+
+    .service-number {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 999px;
+      margin-bottom: 18px;
+      font-weight: 800;
+      color: #0d1215;
+      background: linear-gradient(135deg, #eaf0f4, #8ca0ad);
+    }
+
+    .service h3,
+    .process h3,
+    .project h3 {
+      margin: 0 0 10px;
+      font-size: 1.1rem;
+    }
+
+    .service ul { margin: 16px 0 0; padding-left: 18px; }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 18px;
+    }
+
+    .gallery-stack {
+      display: grid;
+      gap: 18px;
+    }
+
+    .photo {
+      position: relative;
+      min-height: 280px;
+      overflow: hidden;
+      border-radius: 28px;
+      border: 1px solid var(--line);
+      background: #0f1418;
+      box-shadow: var(--shadow);
+    }
+
+    .photo.tall { min-height: 578px; }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .45s ease;
+    }
+
+    .photo:hover img { transform: scale(1.03); }
+
+    .caption {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(9, 13, 16, .7);
+      border: 1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(8px);
+    }
+
+    .caption strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 1rem;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .project,
+    .feature,
+    .process {
+      padding: 24px;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.025);
+      box-shadow: var(--shadow);
+    }
+
+    .project .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 14px 0 0;
+    }
+
+    .meta span {
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color: #d7dee3;
+      font-size: .88rem;
+    }
+
+    .project-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .chip-link {
+      padding: 10px 14px;
+      font-size: .92rem;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .feature strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.05rem;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .process span {
+      display: inline-flex;
+      width: 42px;
+      height: 42px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      margin-bottom: 14px;
+      background: rgba(255,255,255,.07);
+      font-weight: 800;
+      color: #edf2f5;
+    }
+
+    .cta {
+      margin: 36px 0 52px;
+      padding: 34px;
+      border-radius: 30px;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)),
+        linear-gradient(140deg, #111920 0%, #0c1115 100%);
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .cta h3 {
+      margin: 0 0 8px;
+      font-size: clamp(1.5rem, 3vw, 2.35rem);
+      line-height: 1.05;
+      letter-spacing: -.03em;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 22px 0 40px;
+    }
+
+    .footer-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 40;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 18px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #25d366, #1fb857);
+      color: white;
+      font-weight: 800;
+      box-shadow: 0 18px 40px rgba(37,211,102,.32);
+      border: 1px solid rgba(255,255,255,.18);
+      transition: transform .22s ease, box-shadow .22s ease;
+      animation: whatsappPulse 2.4s infinite;
+    }
+
+    .whatsapp-float:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 24px 48px rgba(37,211,102,.42);
+    }
+
+    .whatsapp-icon {
+      width: 22px;
+      height: 22px;
+      flex: 0 0 22px;
+      display: block;
+    }
+
+    .whatsapp-float small {
+      display: block;
+      font-size: .72rem;
+      font-weight: 700;
+      line-height: 1;
+      opacity: .92;
+    }
+
+    .whatsapp-float strong {
+      display: block;
+      font-size: .95rem;
+      line-height: 1.1;
+    }
+
+    @keyframes whatsappPulse {
+      0% { box-shadow: 0 0 0 0 rgba(37,211,102,.34), 0 18px 40px rgba(37,211,102,.28); }
+      70% { box-shadow: 0 0 0 14px rgba(37,211,102,0), 0 18px 40px rgba(37,211,102,.28); }
+      100% { box-shadow: 0 0 0 0 rgba(37,211,102,0), 0 18px 40px rgba(37,211,102,.28); }
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .section-head,
+      .gallery,
+      .cta { grid-template-columns: 1fr; }
+      .services,
+      .hero-points,
+      .stats,
+      .projects,
+      .features,
+      .process-grid { grid-template-columns: repeat(2, 1fr); }
+      .cta-actions { justify-content: flex-start; }
+      .hero-copy,
+      .hero-visual { min-height: auto; }
+      .photo.tall { min-height: 420px; }
+    }
+
+    @media (max-width: 760px) {
+      .nav-links { display: none; }
+      .hero { padding-top: 28px; }
+      .hero-copy { padding: 24px; }
+      h1 { max-width: 100%; }
+      .services,
+      .hero-points,
+      .stats,
+      .projects,
+      .features,
+      .process-grid { grid-template-columns: 1fr; }
+      .hero-actions,
+      .cta-actions,
+      .project-actions { flex-direction: column; align-items: stretch; }
+      .button,
+      .button-secondary,
+      .chip-link { width: 100%; }
+      .cta { padding: 24px; margin-bottom: 36px; }
+      .photo,
+      .photo.tall { min-height: 260px; }
+      .whatsapp-float { right: 14px; bottom: 14px; padding: 14px; }
+      .whatsapp-float .wa-copy small,
+      .whatsapp-float .wa-copy strong { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="#inicio" class="brand" aria-label="Aceros Dusso inicio">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Aceros Dusso</span>
+      </a>
+      <nav class="nav-links" aria-label="Navegación principal">
+        <a href="#servicios">Servicios</a>
+        <a href="#trabajos">Trabajos</a>
+        <a href="#referencias">Referencias</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <a class="button-secondary" href="https://wa.me/5493413776673?text=Hola%20buenas%2C%20estoy%20interesado%20en%20solicitar%20un%20presupuesto%20por%20trabajos%20de%20zinguer%C3%ADa%20y/o%20sistemas%20de%20extracci%C3%B3n." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div>
+            <span class="eyebrow">Soluciones gastronómicas · extracción · ventilación</span>
+            <h1>Aceros Dusso</h1>
+            <p class="lead">Zinguería, plegados, campanas, conductos y sistemas de extracción y ventilación para restaurantes, bares, pizzerías, cocinas industriales y espacios comerciales.</p>
+            <div class="hero-actions">
+              <a class="button" href="https://wa.me/5493413776673?text=Hola%20buenas%2C%20estoy%20interesado%20en%20solicitar%20un%20presupuesto%20por%20trabajos%20de%20zinguer%C3%ADa%20y/o%20sistemas%20de%20extracci%C3%B3n." target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
+              <a class="button-secondary" href="#trabajos">Ver trabajos</a>
+            </div>
+          </div>
+
+          <div class="hero-points">
+            <div class="point">
+              <strong>Trabajo a medida</strong>
+              <span>Soluciones adaptadas a cada cocina, local y recorrido técnico.</span>
+            </div>
+            <div class="point">
+              <strong>Enfoque gastronómico</strong>
+              <span>Instalaciones pensadas para espacios de uso intensivo.</span>
+            </div>
+            <div class="point">
+              <strong>Montaje en obra</strong>
+              <span>Fabricación e instalación con terminación firme y prolija.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="Proyecto destacado de Aceros Dusso">
+          <img src="images/proyecto-2.jpeg" alt="Sistema de extracción industrial instalado por Aceros Dusso en cubierta exterior" />
+          <div class="hero-overlay"></div>
+          <div class="hero-card">
+            <strong>Sistemas de extracción y ventilación</strong>
+            <span>Campanas, conductos, salidas, estructuras y resoluciones metálicas para gastronomía.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="stats">
+          <article class="stat">
+            <strong>Soluciones gastronómicas</strong>
+            <span>Desarrollo de respuestas metálicas para cocinas profesionales y locales comerciales.</span>
+          </article>
+          <article class="stat">
+            <strong>Sistemas de extracción</strong>
+            <span>Recorridos interiores y exteriores para evacuación de aire y humo.</span>
+          </article>
+          <article class="stat">
+            <strong>Ventilación</strong>
+            <span>Instalaciones pensadas para funcionamiento continuo y seguridad operativa.</span>
+          </article>
+          <article class="stat">
+            <strong>Zinguería y plegados</strong>
+            <span>Fabricación en chapa y acero con foco en resistencia, ajuste y terminación.</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="servicios">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Servicios</div>
+            <h2>Soluciones concretas para empresas que necesitan resolver bien y sin vueltas.</h2>
+          </div>
+          <p>Campanas, conductos, ventilación, zinguería y plegados para proyectos gastronómicos y comerciales.</p>
+        </div>
+
+        <div class="services">
+          <article class="service">
+            <div class="service-number">01</div>
+            <h3>Campanas y conductos</h3>
+            <p>Fabricación e instalación de campanas y recorridos metálicos para cocinas y sectores de producción.</p>
+            <ul>
+              <li>Campanas a medida</li>
+              <li>Conductos interiores</li>
+              <li>Recorridos exteriores</li>
+            </ul>
+          </article>
+
+          <article class="service">
+            <div class="service-number">02</div>
+            <h3>Sistemas de extracción</h3>
+            <p>Montaje de soluciones completas para evacuar aire, humo y temperatura en espacios exigentes.</p>
+            <ul>
+              <li>Salidas verticales</li>
+              <li>Salidas horizontales</li>
+              <li>Instalación en cubierta</li>
+            </ul>
+          </article>
+
+          <article class="service">
+            <div class="service-number">03</div>
+            <h3>Ventilación</h3>
+            <p>Desarrollo de sistemas que mejoran circulación y funcionamiento en cocinas, bares y salones.</p>
+            <ul>
+              <li>Adaptación al espacio</li>
+              <li>Integración con equipos</li>
+              <li>Resolución funcional</li>
+            </ul>
+          </article>
+
+          <article class="service">
+            <div class="service-number">04</div>
+            <h3>Zinguería y plegados</h3>
+            <p>Trabajo en chapa y acero orientado a terminación, precisión y presencia profesional.</p>
+            <ul>
+              <li>Plegados</li>
+              <li>Resoluciones metálicas</li>
+              <li>Fabricación a medida</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="trabajos">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Trabajos realizados</div>
+            <h2>Obra real, estructura visible y soluciones pensadas para gastronomía.</h2>
+          </div>
+          <p>Montajes interiores y exteriores con foco en funcionamiento, resistencia y terminación.</p>
+        </div>
+
+        <div class="gallery">
+          <article class="photo tall">
+            <img src="images/proyecto-4.jpeg" alt="Sistema de extracción exterior con conductos de gran porte en cubierta" />
+            <div class="caption">
+              <strong>Montaje exterior</strong>
+              <span>Conductos, extracción y estructura metálica para proyectos gastronómicos de uso intensivo.</span>
+            </div>
+          </article>
+
+          <div class="gallery-stack">
+            <article class="photo">
+              <img src="images/proyecto-1.jpeg" alt="Instalación interior de campana y conductos en cocina gastronómica" />
+              <div class="caption">
+                <strong>Aplicación en cocina</strong>
+                <span>Campanas y recorridos interiores resueltos a medida.</span>
+              </div>
+            </article>
+
+            <article class="photo">
+              <img src="images/proyecto-3.jpeg" alt="Campana industrial y conducto vertical instalados en espacio gastronómico" />
+              <div class="caption">
+                <strong>Campanas industriales</strong>
+                <span>Instalaciones para espacios donde la extracción forma parte del funcionamiento diario.</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="referencias">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Trabajos destacados</div>
+            <h2>Presencia en espacios gastronómicos reconocidos de Rosario y la zona.</h2>
+          </div>
+          <p>Referencias comerciales para mostrar rubro, escala y perfil de trabajo.</p>
+        </div>
+
+        <div class="projects">
+          <article class="project">
+            <h3>Mítico Bar</h3>
+            <p>Bar gastronómico con presencia en Rosario. En Instagram figura en la esquina de Boulevard Oroño y Jujuy, y también menciona Mendoza y Laprida.</p>
+            <div class="meta">
+              <span>Rosario</span>
+              <span>Blvd. Oroño y Jujuy</span>
+              <span>Mendoza y Laprida</span>
+            </div>
+            <div class="project-actions">
+              <a class="chip-link" href="https://www.instagram.com/miticobar/" target="_blank" rel="noopener noreferrer">Ver Instagram</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <h3>Via Apia Pizzería</h3>
+            <p>Pizzería clásica de Rosario. Su presencia pública la ubica sobre Avenida Pellegrini 961, un punto fuerte para reforzar experiencia en gastronomía.</p>
+            <div class="meta">
+              <span>Rosario</span>
+              <span>Av. Pellegrini 961</span>
+              <span>Pizzería</span>
+            </div>
+            <div class="project-actions">
+              <a class="chip-link" href="https://www.instagram.com/viaapiapizzeria/" target="_blank" rel="noopener noreferrer">Ver Instagram</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <h3>La Surfera</h3>
+            <p>Complejo gastronómico frente al río. En Instagram aparece sobre Av. Costanera 2238, Granadero Baigorria, con perfil orientado a reservas y eventos.</p>
+            <div class="meta">
+              <span>Granadero Baigorria</span>
+              <span>Av. Costanera 2238</span>
+              <span>Eventos y gastronomía</span>
+            </div>
+            <div class="project-actions">
+              <a class="chip-link" href="https://www.instagram.com/lasurfera.beach/" target="_blank" rel="noopener noreferrer">Ver Instagram</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Por qué elegir Aceros Dusso</div>
+            <h2>Una presencia clara para empresas que buscan resolver con oficio y prolijidad.</h2>
+          </div>
+          <p>Trabajo orientado a cocinas profesionales, bares, pizzerías, restaurantes y espacios comerciales.</p>
+        </div>
+
+        <div class="features">
+          <article class="feature">
+            <strong>Claridad</strong>
+            <p>El cliente ve rápido qué tipo de trabajos se realizan y para qué rubros.</p>
+          </article>
+          <article class="feature">
+            <strong>Respaldo visual</strong>
+            <p>La obra real muestra estructura, escala y terminación desde el primer contacto.</p>
+          </article>
+          <article class="feature">
+            <strong>Perfil gastronómico</strong>
+            <p>Campanas, extracción y ventilación pensadas para espacios de uso intensivo.</p>
+          </article>
+          <article class="feature">
+            <strong>Contacto directo</strong>
+            <p>Consulta rápida por WhatsApp para evaluar el trabajo y avanzar con claridad.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="proceso">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Proceso</div>
+            <h2>Una forma simple y clara de trabajar.</h2>
+          </div>
+          <p>Desde la consulta inicial hasta la instalación en obra.</p>
+        </div>
+
+        <div class="process-grid">
+          <article class="process">
+            <span>1</span>
+            <h3>Consulta inicial</h3>
+            <p>Envío por WhatsApp con ubicación, rubro y necesidad general del trabajo.</p>
+          </article>
+          <article class="process">
+            <span>2</span>
+            <h3>Evaluación</h3>
+            <p>Análisis del espacio, recorrido y tipo de solución más conveniente.</p>
+          </article>
+          <article class="process">
+            <span>3</span>
+            <h3>Fabricación</h3>
+            <p>Desarrollo de campanas, conductos, plegados o estructuras a medida.</p>
+          </article>
+          <article class="process">
+            <span>4</span>
+            <h3>Instalación</h3>
+            <p>Montaje final en obra con resolución firme, funcional y prolija.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contacto">
+      <div class="container">
+        <div class="cta">
+          <div>
+            <h3>¿Tenés un restaurante, bar, cocina industrial o proyecto comercial?</h3>
+            <p>Consultá por extracción, ventilación, zinguería, plegados y soluciones gastronómicas.</p>
+          </div>
+          <div class="cta-actions">
+            <a class="button" href="https://wa.me/5493413776673?text=Hola%20buenas%2C%20estoy%20interesado%20en%20solicitar%20un%20presupuesto%20por%20trabajos%20de%20zinguer%C3%ADa%20y/o%20sistemas%20de%20extracci%C3%B3n." target="_blank" rel="noopener noreferrer">Hablar por WhatsApp</a>
+            <a class="button-secondary" href="#inicio">Volver arriba</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>Aceros Dusso</span>
+        </div>
+        <p class="footer-note">Soluciones gastronómicas, sistemas de extracción y ventilación, zinguería y plegados.</p>
+      </div>
+      <p>WhatsApp: +54 9 3413 77-6673</p>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/5493413776673?text=Hola%20buenas%2C%20estoy%20interesado%20en%20solicitar%20un%20presupuesto%20por%20trabajos%20de%20zinguer%C3%ADa%20y/o%20sistemas%20de%20extracci%C3%B3n." target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+    <svg class="whatsapp-icon" viewBox="0 0 32 32" aria-hidden="true" fill="currentColor"><path d="M19.11 17.42c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.16-1.34-.8-.71-1.34-1.58-1.5-1.85-.16-.27-.02-.41.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.44-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.28 0 1.34.98 2.64 1.11 2.82.14.18 1.91 2.92 4.64 4.1.65.28 1.15.45 1.54.58.65.21 1.23.18 1.69.11.52-.08 1.6-.65 1.82-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32Z"></path><path d="M27.27 4.72A15.83 15.83 0 0 0 16.02 0C7.28 0 .17 7.11.17 15.85c0 2.79.73 5.51 2.11 7.9L0 32l8.46-2.22a15.8 15.8 0 0 0 7.56 1.92h.01c8.74 0 15.85-7.11 15.85-15.85 0-4.23-1.65-8.21-4.61-11.13ZM16.03 28.99h-.01a13.1 13.1 0 0 1-6.67-1.82l-.48-.28-5.02 1.32 1.34-4.89-.31-.5a13.08 13.08 0 0 1-2.02-6.97C2.86 8.59 8.76 2.7 16.02 2.7c3.51 0 6.8 1.37 9.28 3.84a13.04 13.04 0 0 1 3.84 9.29c0 7.26-5.9 13.16-13.11 13.16Z"></path></svg>
+    <span class="wa-copy"><small>Contacto directo</small><strong>WhatsApp</strong></span>
+  </a>
+</body>
+</html>
